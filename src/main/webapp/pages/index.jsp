@@ -35,7 +35,10 @@ body {
 		// 文档就绪
 		$("#qrcode").attr("src", "/qrcode/${uuid}");
 	    $("#result").html("使用手机扫描二维码");
-		keepPool();
+
+	    // 此处延迟验证，是为了让uuid存入缓存之后再验证
+	    setTimeout(keepPool, 900);
+
 	});
 
 	function keepPool(){

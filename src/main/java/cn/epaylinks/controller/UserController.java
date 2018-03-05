@@ -106,7 +106,7 @@ public class UserController
 		
 		pool.scanSuccess();
 		
-		return "scan success";
+		return "扫码完成，登录成功";
 	}
 	
 	@RequestMapping("/pool")
