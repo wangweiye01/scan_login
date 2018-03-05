@@ -3,6 +3,7 @@ package cn.epaylinks.common;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class PoolCache
 {
@@ -12,7 +13,7 @@ public class PoolCache
 	//每半小时清理一次缓存
 	private static Long cleanIntervalSecond = 1800L;
 	
-	public static Map<String, ScanPool> cacheMap = new HashMap<String, ScanPool>();
+	public static Map<String, ScanPool> cacheMap = new ConcurrentHashMap<String, ScanPool>();
 	
 	static{
 		new Thread(new Runnable()
