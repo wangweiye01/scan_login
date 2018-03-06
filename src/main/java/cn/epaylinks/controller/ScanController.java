@@ -30,9 +30,7 @@ public class ScanController {
 
     @RequestMapping("/qrcode/{uuid}")
     @ResponseBody
-    String createQRCode(@PathVariable String uuid, HttpServletResponse response) {
-        System.out.println("生成二维码");
-
+    public void createQRCode(@PathVariable String uuid, HttpServletResponse response) {
         String text = "http://94a9a217.ngrok.io/login/" + uuid;
         int width = 300;
         int height = 300;
@@ -40,6 +38,7 @@ public class ScanController {
         //将UUID放入缓存
         ScanPool pool = new ScanPool();
         PoolCache.cacheMap.put(uuid, pool);
+        System.out.println("UUID放入缓存 成功");
         try {
             Map<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
             hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
@@ -52,7 +51,8 @@ public class ScanController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+
+        System.out.println("根据UUID生成二维码 成功");
     }
 
     @RequestMapping("/login/{uuid}")
@@ -66,6 +66,8 @@ public class ScanController {
         }
 
         pool.scanSuccess();
+
+        System.out.println("扫码完成，登录成功");
 
         return "扫码完成，登录成功";
     }

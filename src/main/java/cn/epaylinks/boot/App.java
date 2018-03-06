@@ -22,17 +22,11 @@ public class App {
 
     @RequestMapping("/")
     String index(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("进入首页,先生成UUID");
+        System.out.println("生成UUID 成功");
 
         request.setAttribute("uuid", UUID.randomUUID());
 
         return "pages/index";
-    }
-
-    @RequestMapping("/main")
-    String main() {
-        System.out.println("进入主页面");
-        return "pages/main";
     }
 
     public static void main(String[] args) {

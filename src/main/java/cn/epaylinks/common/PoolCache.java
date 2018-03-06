@@ -9,8 +9,8 @@ public class PoolCache {
     //缓存超时时间 10分钟
     private static Long timeOutSecond = 600L;
 
-    //每半小时清理一次缓存
-    private static Long cleanIntervalSecond = 1800L;
+    //每1分钟清理一次缓存
+    private static Long cleanIntervalSecond = 60L;
 
     public static Map<String, ScanPool> cacheMap = new ConcurrentHashMap<String, ScanPool>();
 
