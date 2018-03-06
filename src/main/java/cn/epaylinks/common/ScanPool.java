@@ -25,7 +25,6 @@ public class ScanPool {
                 return true;
             }
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return false;
@@ -39,7 +38,6 @@ public class ScanPool {
             setScan(true);
             this.notifyAll();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -48,7 +46,6 @@ public class ScanPool {
         try {
             this.notifyAll();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
