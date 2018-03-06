@@ -36,59 +36,51 @@ import cn.epaylinks.controller.UserController;
 
 /**
  * Hello world!
- *
  */
 @Controller
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan("cn.epaylinks")
 @MapperScan("cn.epaylinks.mapper")
-public class App
-{
-	@Bean
-	@ConfigurationProperties(prefix="spring.datasource")
-	public DataSource dataSource()
-	{
-		return new org.apache.tomcat.jdbc.pool.DataSource();
-	}
+public class App {
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource dataSource() {
+        return new org.apache.tomcat.jdbc.pool.DataSource();
+    }
 
-	@Bean
-	public SqlSessionFactory SqlSessionFactoryBean() throws Exception
-	{
-		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource());
-		
-		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/*.xml"));
-		
-		return sqlSessionFactoryBean.getObject();
-	}
-	
-	public PlatformTransactionManager transactionManager()
-	{
-		return new DataSourceTransactionManager(dataSource());
-	}
+    @Bean
+    public SqlSessionFactory SqlSessionFactoryBean() throws Exception {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource());
 
-	@RequestMapping("/")
-	String index(HttpServletRequest request,HttpServletResponse response)
-	{
-		System.out.println("进入首页,先生成UUID");
-		
-		request.setAttribute("uuid", UUID.randomUUID());
-		
-		return "pages/index";
-	}
-	
-	@RequestMapping("/main")
-	String main()
-	{
-		System.out.println("进入主页面");
-		return "pages/main";
-	}
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mybatis/*.xml"));
 
-	public static void main(String[] args)
-	{
-		SpringApplication.run(new Object[] { App.class, UserController.class },
-				args);
-	}
+        return sqlSessionFactoryBean.getObject();
+    }
+
+    public PlatformTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource());
+    }
+
+    @RequestMapping("/")
+    String index(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("进入首页,先生成UUID");
+
+        request.setAttribute("uuid", UUID.randomUUID());
+
+        return "pages/index";
+    }
+
+    @RequestMapping("/main")
+    String main() {
+        System.out.println("进入主页面");
+        return "pages/main";
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(new Object[]{App.class, UserController.class},
+                args);
+    }
 }

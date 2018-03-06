@@ -30,6 +30,8 @@ public class PoolCache {
             }
 
             public void clean() {
+                System.out.println("缓存清理...");
+
                 if (cacheMap.keySet().size() > 0) {
                     Iterator<String> iterator = cacheMap.keySet().iterator();
                     while (iterator.hasNext()) {

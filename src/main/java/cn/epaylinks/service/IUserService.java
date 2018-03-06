@@ -7,9 +7,8 @@ import org.springframework.stereotype.Service;
 import cn.epaylinks.model.User;
 
 @Service
-public interface IUserService
-{
+public interface IUserService {
 
-	List<User> getUserList();
+    List<User> getUserList();
 
 }

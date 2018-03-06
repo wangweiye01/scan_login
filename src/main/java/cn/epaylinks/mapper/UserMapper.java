@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import cn.epaylinks.model.User;
 
 @Repository
-public interface UserMapper
-{
-	public List<User> findUserInfo();
+public interface UserMapper {
+    public List<User> findUserInfo();
 }

@@ -10,18 +10,16 @@ import cn.epaylinks.model.User;
 import cn.epaylinks.service.IUserService;
 
 @Service
-public class UserServiceImpl implements IUserService
-{
+public class UserServiceImpl implements IUserService {
 
-	@Autowired
-	private UserMapper userMapper;
-	
-	@Override
-	public List<User> getUserList()
-	{
-		// TODO Auto-generated method stub
-		List<User> list = userMapper.findUserInfo();
-		return list;
-	}
-	
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public List<User> getUserList() {
+        // TODO Auto-generated method stub
+        List<User> list = userMapper.findUserInfo();
+        return list;
+    }
+
 }
