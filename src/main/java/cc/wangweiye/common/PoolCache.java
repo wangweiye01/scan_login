@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class PoolCache {
-    //缓存超时时间 10分钟
-    private static Long timeOutSecond = 600L;
+    //缓存超时时间 80秒
+    private static Long timeOutSecond = 80L;
 
     //每1分钟清理一次缓存
     private static Long cleanIntervalSecond = 60L;

@@ -83,9 +83,10 @@ public class ScanController {
         }
 
         //使用计时器，固定时间后不再等待扫描结果--防止页面访问超时
-        new Thread(new ScanCounter(uuid)).start();
+        new Thread(new ScanCounter(pool)).start();
 
         boolean scanFlag = pool.getScanStatus();
+
         if (scanFlag) {
             return "success";
         } else {
@@ -98,10 +99,10 @@ public class ScanController {
         public Long timeout = 27000L;
 
         //传入的对象
-        private String uuid;
+        private ScanPool scanPool;
 
-        public ScanCounter(String p) {
-            uuid = p;
+        public ScanCounter(ScanPool scanPool) {
+            this.scanPool = scanPool;
         }
 
         @Override
@@ -111,12 +112,11 @@ public class ScanController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            notifyPool(uuid);
+            notifyPool(scanPool);
         }
 
-        public synchronized void notifyPool(String uuid) {
-            ScanPool pool = PoolCache.cacheMap.get(uuid);
-            pool.notifyPool();
+        public synchronized void notifyPool(ScanPool scanPool) {
+            scanPool.notifyPool();
         }
     }
 }
