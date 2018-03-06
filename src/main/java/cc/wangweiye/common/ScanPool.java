@@ -1,4 +1,4 @@
-package cn.epaylinks.common;
+package cc.wangweiye.common;
 
 public class ScanPool {
 

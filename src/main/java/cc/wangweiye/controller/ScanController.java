@@ -1,4 +1,4 @@
-package cn.epaylinks.controller;
+package cc.wangweiye.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import cc.wangweiye.common.ScanPool;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,8 +21,7 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-import cn.epaylinks.common.ScanPool;
-import cn.epaylinks.common.PoolCache;
+import cc.wangweiye.common.PoolCache;
 
 @Controller
 @EnableAutoConfiguration

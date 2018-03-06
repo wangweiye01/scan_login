@@ -1,4 +1,4 @@
-package cn.epaylinks.boot;
+package cc.wangweiye;
 
 import java.util.UUID;
 
@@ -12,12 +12,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.epaylinks.controller.ScanController;
+import cc.wangweiye.controller.ScanController;
 
 @Controller
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan("cn.epaylinks")
+@ComponentScan("cc.wangweiye")
 public class App {
 
     @RequestMapping("/")
