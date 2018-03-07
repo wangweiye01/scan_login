@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.epaylinks</groupId>
-	<artifactId>spring-boot</artifactId>
+	<groupId>cc.wangweiye</groupId>
+	<artifactId>scan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>spring-boot</name>
+	<name>scan-login</name>
 	<url>http://maven.apache.org</url>
 
 	<!-- Inherit defaults from Spring Boot -->
