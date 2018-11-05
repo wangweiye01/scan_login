@@ -1,3 +1,4 @@
 /target/
 .idea/
 spring-boot.iml
+scan.iml
