@@ -16,8 +16,6 @@ import cc.wangweiye.controller.ScanController;
 
 @Controller
 @SpringBootApplication
-@EnableAutoConfiguration
-@ComponentScan("cc.wangweiye")
 public class App {
 
     @RequestMapping("/")
