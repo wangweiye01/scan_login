@@ -30,7 +30,7 @@ public class ScanController {
     @RequestMapping("/qrcode/{uuid}")
     @ResponseBody
     public void createQRCode(@PathVariable String uuid, HttpServletResponse response) {
-        String text = "http://9f72b5fdfdd3.ngrok.io/login/" + uuid;
+        String text = "http://fb7f15cbcefe.ngrok.io/login/" + uuid;
         int width = 300;
         int height = 300;
         String format = "png";
