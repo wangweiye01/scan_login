@@ -53,9 +53,4 @@ public class ScanPool {
     public Long getCreateTime() {
         return createTime;
     }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
 }
