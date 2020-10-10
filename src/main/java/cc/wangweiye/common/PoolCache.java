@@ -38,6 +38,7 @@ public class PoolCache {
                         ScanPool pool = cacheMap.get(key);
                         if (System.currentTimeMillis() - pool.getCreateTime() > timeOutSecond * 1000) {
                             cacheMap.remove(key);
+                            // 这一行很关键！用于当清理完成，前端请求还在pending时，立即返回结果
                             pool.notifyPool();
                         }
                     }
