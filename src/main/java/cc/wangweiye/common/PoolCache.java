@@ -38,6 +38,7 @@ public class PoolCache {
                         ScanPool pool = cacheMap.get(key);
                         if (System.currentTimeMillis() - pool.getCreateTime() > timeOutSecond * 1000) {
                             cacheMap.remove(key);
+                            pool.notifyPool();
                         }
                     }
                 }
