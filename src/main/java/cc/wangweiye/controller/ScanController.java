@@ -112,10 +112,6 @@ public class ScanController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            notifyPool(scanPool);
-        }
-
-        public synchronized void notifyPool(ScanPool scanPool) {
             scanPool.notifyPool();
         }
     }
